@@ -1,22 +1,22 @@
 <template>
   <div>
-    <h1>Dogs for adoption</h1>
-    <b-table striped hover :items="dogs"></b-table>
+    <PetTable species="dogs" :pets="dogs" />
   </div>
 </template>
 
 <script>
-// @ is shortcut for src dir
 import { mapState } from 'vuex'
+import PetTable from '../components/PetTable.vue'
 
 export default {
+  components: {
+    PetTable
+  },
   data () {
     return {}
   },
   computed: {
-    ...mapState([
-      'dogs'
-    ])
+    ...mapState(['dogs'])
   }
 }
 </script>
